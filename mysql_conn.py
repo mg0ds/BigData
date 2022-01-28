@@ -3,10 +3,7 @@ import paramiko
 import json
 from sshtunnel import SSHTunnelForwarder
 
-# https://www.isc.upenn.edu/accessing-mysql-databases-aws-python-lambda-function
-# https://stackoverflow.com/questions/21903411/enable-python-to-connect-to-mysql-via-ssh-tunnelling
-
-pkeyfilepath = "/Users/mg/Desktop/ec2database16012022.pem"
+pkeyfilepath = "klucz.pem"
 mypkey = paramiko.RSAKey.from_private_key_file(pkeyfilepath)
 
 sql_hostname = '127.0.0.1'
@@ -14,7 +11,7 @@ sql_username = 'root'
 sql_password = 'moje-tajne-haslo'
 sql_main_database = 'rb'
 sql_port = 3306
-ssh_host = 'ec2-3-89-252-236.compute-1.amazonaws.com'
+ssh_host = 'ec2-3-43-223-124.compute-1.amazonaws.com'
 ssh_user = 'ubuntu'
 ssh_port = 22
 sql_ip = '127.0.0.1'
@@ -32,7 +29,7 @@ with SSHTunnelForwarder(
         print("Połącznie udane!")
     item_count = 0
     with conn.cursor() as cur:
-        plik = "/Users/mg/moje/Big Data/BDProjekt/gotowe moduły do pracy/mysql connector/ratebeer1p.json"
+        plik = "ratebeer1p.json"
         # cur.execute("create table rb_test (id int, reviewid int, beer_name varchar(255), beerid int, brewerid int,"
         #             "abv varchar(255), style varchar(255), appearance double, aroma double, palate double, taste double,"
         #             "overall double, time varchar(255), profilename varchar(255), text text, lang varchar(255))")

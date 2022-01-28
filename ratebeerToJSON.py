@@ -4,10 +4,6 @@ from langdetect import detect
 
 file = "ratebeer.txt"
 
-#beer_options = {"name" : 10, "beerId" : 12 , "brewerId": 14, "ABV" : 9, "style" : 11}
-#review_options = {"appearance" : 18, "aroma": 13, "palate" : 14, "taste" : 13, "overall" : 15, "time" : 12, "profileName" : 19, "text" : 12}
-#json_template = '{"beer": {"name": {name}, "beerId": {ID}, "brewerId": {2}, "ABV": {3}, "style": "{4}"}, "review": {"appearance": "{5}", "aroma": "{6}", "palate": "{7}", "taste": "{8}", "overall": "{9}", "time": {10}, "profileName": "{11}", "text": "{12}"}}'
-
 beer_poz = [11, 13, 15, 10, 12, 19, 14, 15, 14, 16, 13, 20, 13]  # od którego indeksu kopiujemy tekst
 beerVal = []  # lista do magazynowania jednej recenzji
 beerID = []  # lista gdzie wrzucamy wszystkie BeerID
@@ -75,14 +71,6 @@ with open(file, "r", encoding="utf-8", errors='ignore') as rb_raw:
             x, y = beerVal[9].split("/")
             overall_val = int(x) / int(y)
             beerVal[9] = str(overall_val)
-
-            # zamiana timestamp na datę
-            #timestamp = int(beerVal[10])
-            #dt_object = datetime.fromtimestamp(timestamp)
-            #beerVal[10] = str(dt_object.date())
-
-
-
 
             if b != 1:
                 JSONline = '\n{"reviewID":' + str(b) + ', "beer_name":' + '"' + beerVal[0] + '"' + ', "beerId":' + beerVal[1] + ', "brewerId":' + \

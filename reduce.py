@@ -36,5 +36,5 @@ if __name__ == "__main__":
 
 
 #przyklady:
-#hadoop fs -copyToLocal s3://14052021mgtest/data/ratebeer2.json .
+#hadoop fs -copyToLocal s3://moje-wiaderko/data/ratebeer2.json .
 #hdfs dfs -put ratebeer2.json /tmp/m

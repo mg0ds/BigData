@@ -31,7 +31,7 @@ def map(lines):
                 if word.lower() not in stop_word:
                     txtDlaReduktora = '{"beerId":' + str(data["beerId"]) + ', "word":"'
                     txtDlaReduktora = txtDlaReduktora + word.lower() + '", "count":1}'
-                    #ewentualnie jak mozna tylko jeden kay i jedno value przesylac:
+                    #ewentualnie jak mozna tylko jeden key i jedno value przesylac:
                     #txtDlaReduktora = str(data["beerId"]) + "@" + word.lower() + "/t" + "1"
                     print(txtDlaReduktora)
 
